@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block header %}
+ UPDATE 
+{% endblock header %}
+{% block content %}
+<form action="{% url 'car-create' car.id%}" method="POST" enctype= "multipart/form-data">
+	{% csrf_token %}
+	{{form | crispy}}
+	<input type="submit" value="UPDATE">
+
+{% endblock content %}
